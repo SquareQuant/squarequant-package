@@ -46,6 +46,8 @@ setup(
             "flake8>=3.9.0",
             "sphinx>=4.0.0",
             "sphinx-rtd-theme>=0.5.0",
+            "sphinx-autodoc-typehints>=1.22.0",
+            "myst-parser>=1.0.0", 
         ],
     },
     keywords="finance, risk, portfolio, investment, stocks, analysis, visualization",
