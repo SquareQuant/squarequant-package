@@ -24,3 +24,6 @@ python:
       extra_requirements:
         - dev
     - requirements: docs/requirements.txt
+    - method: pip
+      packages:
+        - sphinx-autodoc-typehints
