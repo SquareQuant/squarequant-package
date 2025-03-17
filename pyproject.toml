@@ -6,9 +6,26 @@ build-backend = "setuptools.build_meta"
 name = "squarequant"
 version = "0.1.0"
 description = "A Python package for quantitative finance"
-requires-python = ">=3.9"
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.7"
+license = {text = "MIT"}
+dynamic = [
+    "authors",
+    "keywords",
+    "classifiers",
+    "urls",
+    "dependencies"
+]
+
+[tool.setuptools.dynamic]
+authors = {attr = "setup.author"}
+keywords = {attr = "setup.keywords"}
+classifiers = {attr = "setup.classifiers"}
+urls = {attr = "setup.project_urls"}
+dependencies = {file = "requirements.txt"}
 
 [project.optional-dependencies]
+optimization = ["cvxpy>=1.0.0"]
 dev = [
     "pytest>=6.0.0",
     "black>=21.5b2",
@@ -16,5 +33,5 @@ dev = [
     "sphinx>=4.0.0",
     "sphinx-rtd-theme>=0.5.0",
     "sphinx-autodoc-typehints>=1.22.0",
-    "myst-parser>=1.0.0"
+    "myst-parser>=1.0.0",
 ]
