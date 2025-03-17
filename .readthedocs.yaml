@@ -10,11 +10,7 @@ sphinx:
 
 python:
   install:
-    - method: pip
-      path: .
+    - requirements: docs/requirements.txt
+    - path: .
       extra_requirements: 
         - dev
-    - requirements: docs/requirements.txt
-    - method: pip
-      packages:
-        - sphinx-autodoc-typehints
