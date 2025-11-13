@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "squarequant"
+version = "0.2.3"
+authors = [
+    { name="Gabriel Bosch", email="contact@squarequant.org" },
+]
+description = "A Python package for financial risk metrics and stock data analysis"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 4 - Beta",
+]
+dependencies = [
+    "pandas>=1.0.0",
+    "numpy>=1.18.0",
+    "yfinance>=0.1.63",
+    "scipy>=1.5.0",
+    "scikit-learn>=1.5.0",
+    "matplotlib>=3.3.0",
+    "statsmodels>=0.12.0",
+    "requests>=2.25.0",
+]
+
+[project.optional-dependencies]
+optimization = ["cvxpy>=1.0.0"]
+dev = [
+    "pytest>=6.0.0",
+    "black>=21.5b2",
+    "flake8>=3.9.0",
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=0.5.0",
+    "sphinx-autodoc-typehints>=1.22.0",
+    "myst-parser>=1.0.0",
+    "pytest-cov>=2.12.0",
+]
+
+[project.urls]
+Documentation = "https://www.squarequant.org"
+"Bug Tracker" = "https://github.com/SquareQuant/squarequant-package/issues"
+Homepage = "https://github.com/SquareQuant/squarequant-package"
