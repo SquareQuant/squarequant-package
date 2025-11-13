@@ -5,8 +5,8 @@ Thank you for your interest in contributing to **SquareQuant**! Your contributio
 ## License and Contribution Terms
 By contributing to SquareQuant, you agree that your contributions will be licensed under the MIT License. This means:
 
-Your contributions will be freely available for use, modification, and distribution under the terms of the MIT License.
-You retain copyright to your contributions but grant the project the right to use them under the MIT License.
+- Your contributions will be freely available for use, modification, and distribution under the terms of the MIT License.
+- You retain copyright to your contributions but grant the project the right to use them under the MIT License.
 ---
 
 ## How to Contribute
