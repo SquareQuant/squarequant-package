@@ -152,7 +152,7 @@ var_values = sq.var(data, assets, confidence=0.99)
 
 ## Documentation
 
-For full documentation, visit [https://squarequant.readthedocs.io](https://squarequant.readthedocs.io)
+For full documentation, visit [https://www.squarequant.org/]
 
 ## Contributing
 
@@ -163,5 +163,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 MIT
 
 ## Author
+
 
 Gabriel Bosch
