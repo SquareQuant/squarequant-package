@@ -3,6 +3,7 @@
 /build/
 /dist/
 /local/
+.idea/
 __pycache__/
 *.egg-info/
 *.pyc
