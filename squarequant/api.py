@@ -321,7 +321,7 @@ def var(
 def cvar(data: pd.DataFrame,
          assets: List[str],
          use_returns: bool = True,
-         returns_type: Optional[str] = None,
+         returns_type: Optional[str] = "relative",
          confidence: float = DEFAULT_CONFIDENCE,
          window: int = DEFAULT_CVAR_WINDOW,
          start: Optional[str] = None,

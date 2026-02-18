@@ -6,7 +6,7 @@ import pandas as pd
 import yfinance as yf
 import requests
 import concurrent.futures
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from typing import List, Optional, Literal
 
@@ -27,8 +27,8 @@ VALID_ASSET_CLASSES = ["stock", "index", "option"]
 @dataclass
 class DownloadConfig:
     """Configuration for ticker data download"""
-    start_date: str = (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d')
-    end_date: str = datetime.now().strftime('%Y-%m-%d')
+    start_date: str = field(default_factory=lambda: (datetime.now() - timedelta(days=365)).strftime('%Y-%m-%d'))
+    end_date: str = field(default_factory=lambda: datetime.now().strftime('%Y-%m-%d'))
     interval: str = '1d'
     columns: Optional[List[str]] = None
     source: Literal["yfinance", "theta"] = "yfinance"

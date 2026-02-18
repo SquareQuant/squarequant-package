@@ -27,7 +27,7 @@ VALID_VAR_SCALING_METHODS = {'sqrt_time', 'overlapping'}
 VALID_VAR_METHODS = {'historical', 'parametric'}
 VALID_EVAR_METHODS = {'parametric'}
 VALID_EVAR_DISTRIBUTION = {'normal'}
-VALID_CVAR_METHODS = {'historical'}
+VALID_CVAR_METHODS = {'historical', 'parametric'}
 DEFAULT_CVAR_METHOD = 'historical'
 
 # Default values
@@ -40,4 +40,3 @@ DEFAULT_MC_CONFIDENCE = 0.95
 VALID_INTERVALS = {'1m', '15m', '60m', '1h', '1d', '1wk', '1mo'}
 VALID_COLUMNS = {'Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume'}
 VALID_SCALING_METHODS = {'sqrt_time', 'linear', 'none'}
-

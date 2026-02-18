@@ -4,6 +4,7 @@ Risk metric implementations for the SquareQuant package
 
 import pandas as pd
 import numpy as np
+import warnings
 from scipy import stats
 from typing import List, Optional
 
@@ -327,7 +328,7 @@ class MaximumDrawdown(RiskMetricBase):
 
         rolling_max = data_to_use.rolling(window=self.window, min_periods=self.min_periods).max()
 
-        if self.use_returns == "absolute":
+        if self.use_returns and self.returns_type == "absolute":
             self.result[self.valid_assets] = data_to_use.sub(rolling_max)
         else:
             self.result[self.valid_assets] = data_to_use.div(rolling_max) - 1
@@ -470,6 +471,8 @@ class ConditionalValueAtRisk(RiskMetricBase):
         if hasattr(self, 'original_data') and use_returns:
             del self.original_data
         self.confidence = confidence
+        if method not in VALID_CVAR_METHODS:
+            raise ValueError(f"Method must be one of {VALID_CVAR_METHODS}.")
         self.method = method
         self.holding_period = holding_period
         self.scaling_method = scaling_method
@@ -625,7 +628,6 @@ class SemiDeviation(RiskMetricBase):
         else:
             threshold = self.target_return
         downside_returns = np.minimum(self.data[self.valid_assets] - threshold, 0)
-        print(downside_returns)
 
         rolling_dowside = downside_returns.rolling(
                 window=self.window,
@@ -710,7 +712,7 @@ class AverageDrawdown(RiskMetricBase):
         # Calculate rolling maximums
         rolling_max = data_to_use.rolling(window=self.window, min_periods=self.min_periods).max()
 
-        if self.use_returns == "absolute":
+        if self.use_returns and self.returns_type == "absolute":
             self.result[self.valid_assets] = data_to_use.sub(rolling_max)
         else:
             self.result[self.valid_assets] = data_to_use.div(rolling_max) - 1
@@ -769,12 +771,11 @@ class UlcerIndex(RiskMetricBase):
 
         # Checking the validity of data if use_returns=True
         if use_returns and (self.data[self.valid_assets] > 2).values.any():
-            user_input = input(
-                "Some values in the DataFrame provided are large which could cause overflow. Are you sure all the data is returns? (Y/N): ").strip().upper()
-            if user_input == "Y":
-                pass
-            elif user_input == "N":
-                raise ValueError("Execution stopped by user due to large values.")
+            warnings.warn(
+                "Large values detected while use_returns=True. "
+                "If this data contains prices, set use_returns=False.",
+                RuntimeWarning
+            )
 
     def calculate(self) -> pd.DataFrame:
         """Calculates the Ulcer Index for all valid assets.
@@ -808,7 +809,7 @@ class UlcerIndex(RiskMetricBase):
         # Calculate rolling maximums
         rolling_max = data_to_use.rolling(window=self.window, min_periods=self.min_periods).max()
 
-        if self.use_returns == "absolute":
+        if self.use_returns and self.returns_type == "absolute":
             drawdowns = data_to_use.sub(rolling_max)
         else:
             drawdowns = data_to_use.div(rolling_max) - 1
@@ -1242,7 +1243,7 @@ class ConditionalDrawdownAtRisk(RiskMetricBase):
 
         # Compute drawdowns and filters NaNs
         rolling_max = np.maximum.accumulate(valid_returns)
-        if self.use_returns == "absolute":
+        if self.returns_type == "absolute":
             drawdowns = valid_returns - rolling_max
         else:
             drawdowns = valid_returns / rolling_max - 1
