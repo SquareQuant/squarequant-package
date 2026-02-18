@@ -4,6 +4,7 @@ from numpy.random import default_rng, Generator, PCG64, SeedSequence
 from scipy import stats
 from scipy.linalg import cholesky, LinAlgError
 import pandas as pd
+from typing import Union
 from squarequant.constants import DEFAULT_MC_CONFIDENCE, TRADING_DAYS_PER_YEAR
 
 class MonteCarloSimulator:
@@ -101,11 +102,11 @@ class MonteCarloSimulator:
 
     @staticmethod
     def simple_mc_static(
-            sample: np.ndarray | list,
+            sample: Union[np.ndarray, list],
             confidence_level: float = DEFAULT_MC_CONFIDENCE,
             distribution: str = 'normal',
             df: int = 4
-    ) -> dict[str, float | tuple[float, float]]:
+    ) -> dict:
         """Computes sample statistics and confidence intervals for the mean under specified distributions.
 
         Supports normal, Student's t, and Laplace distributions for modeling data with varying tail behavior.

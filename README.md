@@ -35,7 +35,8 @@ config = sq.DownloadConfig(
 data = sq.download_tickers(['AAPL', 'MSFT', 'GOOGL'], config)
 data = pd.DataFrame({
     'AAPL': data['AAPL_Close'],
-    'MSFT': data['MSFT_Close']
+    'MSFT': data['MSFT_Close'],
+    'GOOGL': data['GOOGL_Close'],
 })
 
 # Calculate volatility

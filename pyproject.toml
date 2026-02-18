@@ -4,17 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "squarequant"
-version = "0.2.3"
+version = "0.3.0"
 authors = [
     { name="Gabriel Bosch", email="contact@squarequant.org" },
 ]
 description = "A Python package for financial risk metrics and stock data analysis"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -56,3 +54,7 @@ dev = [
 Documentation = "https://www.squarequant.org"
 "Bug Tracker" = "https://github.com/SquareQuant/squarequant-package/issues"
 Homepage = "https://github.com/SquareQuant/squarequant-package"
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+testpaths = ["tests"]
