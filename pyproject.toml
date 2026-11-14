@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "squarequant"
+dynamic = ["version"]
+license = "MIT"
+authors = [
+    { name="Gabriel Bosch", email="contact@squarequant.org" },
+]
+description = "Financial risk metrics, Monte Carlo simulations, and optional market-data adapters"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Development Status :: 4 - Beta",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+data = ["yfinance>=0.2.0", "requests>=2.25.0"]
+optimization = ["cvxpy>=1.0.0"]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.11",
+    "mypy>=1.15",
+    "hypothesis>=6",
+    "build>=1",
+    "requests>=2.25.0",
+    "sphinx>=4.0.0",
+    "myst-parser>=1.0.0",
+    "pytest-cov>=2.12.0",
+]
+
+[project.urls]
+Documentation = "https://www.squarequant.org"
+"Bug Tracker" = "https://github.com/SquareQuant/squarequant-package/issues"
+Homepage = "https://github.com/SquareQuant/squarequant-package"
+
+[tool.setuptools.dynamic]
+version = {attr = "squarequant.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["squarequant*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+ignore = ["E741"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+files = ["squarequant"]
+follow_imports = "silent"

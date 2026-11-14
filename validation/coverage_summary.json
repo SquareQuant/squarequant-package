@@ -1,0 +1,152 @@
+{
+  "squarequant/__init__.py": {
+    "covered_lines": 6,
+    "num_statements": 6,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/api.py": {
+    "covered_lines": 59,
+    "num_statements": 59,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/constants.py": {
+    "covered_lines": 29,
+    "num_statements": 29,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/core/__init__.py": {
+    "covered_lines": 0,
+    "num_statements": 0,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/core/base.py": {
+    "covered_lines": 73,
+    "num_statements": 91,
+    "percent_covered": 80.21978021978022,
+    "percent_covered_display": "80",
+    "missing_lines": 18,
+    "excluded_lines": 0,
+    "percent_statements_covered": 80.21978021978022,
+    "percent_statements_covered_display": "80"
+  },
+  "squarequant/core/metrics.py": {
+    "covered_lines": 259,
+    "num_statements": 285,
+    "percent_covered": 90.87719298245614,
+    "percent_covered_display": "91",
+    "missing_lines": 26,
+    "excluded_lines": 0,
+    "percent_statements_covered": 90.87719298245614,
+    "percent_statements_covered_display": "91"
+  },
+  "squarequant/data/__init__.py": {
+    "covered_lines": 0,
+    "num_statements": 0,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/data/data.py": {
+    "covered_lines": 130,
+    "num_statements": 143,
+    "percent_covered": 90.9090909090909,
+    "percent_covered_display": "91",
+    "missing_lines": 13,
+    "excluded_lines": 0,
+    "percent_statements_covered": 90.9090909090909,
+    "percent_statements_covered_display": "91"
+  },
+  "squarequant/monte_carlo/__init__.py": {
+    "covered_lines": 0,
+    "num_statements": 0,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/monte_carlo/montecarlo.py": {
+    "covered_lines": 120,
+    "num_statements": 139,
+    "percent_covered": 86.33093525179856,
+    "percent_covered_display": "86",
+    "missing_lines": 19,
+    "excluded_lines": 0,
+    "percent_statements_covered": 86.33093525179856,
+    "percent_statements_covered_display": "86"
+  },
+  "squarequant/utils/__init__.py": {
+    "covered_lines": 0,
+    "num_statements": 0,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/utils/helpers.py": {
+    "covered_lines": 29,
+    "num_statements": 33,
+    "percent_covered": 87.87878787878788,
+    "percent_covered_display": "88",
+    "missing_lines": 4,
+    "excluded_lines": 0,
+    "percent_statements_covered": 87.87878787878788,
+    "percent_statements_covered_display": "88"
+  },
+  "squarequant/utils/validation.py": {
+    "covered_lines": 19,
+    "num_statements": 19,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/var/__init__.py": {
+    "covered_lines": 0,
+    "num_statements": 0,
+    "percent_covered": 100.0,
+    "percent_covered_display": "100",
+    "missing_lines": 0,
+    "excluded_lines": 0,
+    "percent_statements_covered": 100.0,
+    "percent_statements_covered_display": "100"
+  },
+  "squarequant/var/valueatrisk.py": {
+    "covered_lines": 89,
+    "num_statements": 102,
+    "percent_covered": 87.25490196078431,
+    "percent_covered_display": "87",
+    "missing_lines": 13,
+    "excluded_lines": 0,
+    "percent_statements_covered": 87.25490196078431,
+    "percent_statements_covered_display": "87"
+  }
+}

@@ -1,0 +1,8 @@
+recursive-include tests *.py
+recursive-include docs *.md *.py
+prune docs/_build
+include examples/risk_metrics_demo.py
+include requirements-validation-py312.txt
+include VALIDATION_REPORT.md
+include CHANGELOG.md
+include START_HERE.txt
